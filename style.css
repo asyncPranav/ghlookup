@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    font-size: 62.5%;
+    --black: #1c1c1d;
+    --white: #EAEFEF;
+    --grey: #999;
+    --darkGrey: rgb(46, 46, 46);
+    --yellow: #c3c000;
+
+}
+
+body {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    min-height: 30rem;
+}
+
+.mainContainer {
+    /* border: 2px solid green; */
+    width: 100%;
+    /* padding: 5rem 3rem; */
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+}
+
+/* ------------------Search------------------- */
+
+.searchContainer {
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 0.3rem 0.4rem;
+
+    background-color: rgb(46, 46, 46);
+    border-radius: 1rem;
+    margin: 4rem auto 0 auto;
+    /* width: 90%; */
+
+}
+
+
+.searchContainer #search {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: var(--black);
+    color: var(--white);
+}
+
+.searchContainer #search::placeholder {
+    color: var(--grey);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+
+}
+
+
+.searchContainer #search:focus:not(:placeholder-shown) {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    padding: 1.2rem 1.5rem;
+
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 5rem 0rem;
+    /* border: 2px solid gold; */
+    border: 0.2rem solid var(--darkGrey);
+    border-radius: 2rem;
+    padding: 3rem;
+    
+}
+
+.profileContainer .profileHead {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+}
+
+.profileContainer .profileHead .profileImg {
+    /* border: 2px solid gold; */
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 7em;
+    height: 7em;
+
+}
+
+.profileContainer .profileHead .profileImg img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.profileContainer .profileHead .profileName {
+    border: 2px solid transparent;
+
+}
+
+.profileContainer .profileHead .profileName .profileNameText {
+    /* border: 2px solid pink; */
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--yellow);
+}
+
+.profileContainer .profileHead .profileName .profileUsernameText {
+    /* border: 2px solid pink; */
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--grey);
+    font-weight: 400;
+
+}
+
+/* ------------------Bio------------------- */
+
+.profileContainer .bioContainer {
+    /* border: 2px solid purple; */
+    padding: 0 3rem;
+}
+
+.profileContainer .bioContainer p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+
+/* ------------------Follow------------------- */
+
+
+.profileContainer .followContainer {
+    display: flex;
+    gap: 1em;
+    font-size: 1.4rem;
+    /* border: 2px solid gold; */
+    padding: 0rem 3rem;
+    /* color: rgb(147, 147, 147); */
+    color: var(--grey);
+    margin-top: 1rem;
+    align-items: center;
+    font-weight: 300;
+}
+
+.profileContainer .followContainer .followTextNum,
+.profileContainer .followContainer .followingTextNum {
+    font-size: 1.6rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+
+/* ------------------Repo------------------- */
+
+
+.reposSection {
+    padding: 2rem;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+
+.reposTitle {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    color: var(--yellow);
+}
+
+.reposContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.repoCard {
+    background: #181818;
+    padding: 1.2rem;
+    border-radius: 0.75rem;
+    border: 1px solid #2c2c2c;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.repoCard:hover {
+    transform: translateY(-5px);
+}
+
+.repoName {
+    color: var(--yellow);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.repoDesc {
+    color: #ccc;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.repoMeta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.noRepoError{
+    font-size: 1.4rem;
+    color: var(--grey);
+    text-align: center;
+}
