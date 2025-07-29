@@ -2,10 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Profile Viewer</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>GitHub Profile Viewer | Search GitHub Users</title>
+
+    <!-- Meta Description (for SEO) -->
+    <meta name="description" content="A fast, responsive GitHub Profile Viewer to search any GitHub user and explore their bio, followers, and repositories." />
+
+    <!-- Meta Keywords (optional, not very useful now) -->
+    <meta name="keywords" content="GitHub, Github profile viewer, Github user search, repositories, JavaScript, frontend project asyncpranav" />
+
+    <!-- Author -->
+    <meta name="author" content="Pranav Singh Chandel" />
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Styles & Scripts -->
+    <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/a2fa536777.js" crossorigin="anonymous" defer></script>
     <script src="script.js" defer></script>
 </head>
@@ -15,34 +32,36 @@
         <div class="mainContainer">
             <div class="searchContainer">
                 <form>
-                    <input type="search" name="search" id="search" placeholder="Search user with username">
-                    <!-- <span class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></span> -->
+                    <div class="searchBox">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" name="search" id="search" placeholder="Search github username">
+                    </div>
                 </form>
             </div>
-            <div class="profileWrapper">
-                <!-- <div class="profileContainer">
-                    <div class="profileHead">
-                        <div class="profileImg">
-                            <img src="https://avatars.githubusercontent.com/u/102846160?v=4" alt="user-image">
-                        </div>
-                        <div class="profileName">
-                            <p class="profileNameText">Pranav singh chandel</p>
-                            <p class="profileUsernameText">@asyncPranav</p>
-                        </div>
-                    </div>
-
-                    <div class="bioContainer">
-                        <p class="bioText">uweiw wiwe wowiow wwoiwe woiw</p>
-                    </div>
-
-                    <div class="followContainer">
-                        <span><i class="fa-solid fa-user-group"></i></span>
-                        <span class="followersText"><span class="followTextNum">300</span> Followers</span>
-                        <span class="followingText"><span class="followingTextNum">20</span> Following</span>
-                    </div>
-                </div> -->
-            </div>
         </div>
+        <div class="profileWrapper">
+            <!-- <div class="profileContainer">
+                <div class="profileHead">
+                    <div class="profileImg">
+                        <img src="https://avatars.githubusercontent.com/u/102846160?v=4" alt="user-image">
+                    </div>
+                    <div class="profileName">
+                        <p class="profileNameText">Pranav singh chandel</p>
+                        <p class="profileUsernameText">@asyncPranav</p>
+                    </div>
+                </div>
+
+                <div class="bioContainer">
+                    <p class="bioText">uweiw wiwe wowiow wwoiwe woiw</p>
+                </div>
+
+                <div class="followContainer">
+                    <span><i class="fa-solid fa-user-group"></i></span>
+                    <span class="followersText"><span class="followTextNum">300</span> Followers</span>
+                    <span class="followingText"><span class="followingTextNum">20</span> Following</span>
+                </div>
+            </div>
+        </div> -->
     </header>
 
     <main>

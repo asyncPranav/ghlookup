@@ -44,25 +44,36 @@ header {
 /* ------------------Search------------------- */
 
 .searchContainer {
-    /* border: 2px solid red; */
     width: 100%;
     padding: 0.3rem 0.4rem;
-
     background-color: rgb(46, 46, 46);
     border-radius: 1rem;
     margin: 4rem auto 0 auto;
-    /* width: 90%; */
-
 }
 
+.searchBox {
+    position: relative;
+    width: 100%;
+}
+
+.searchBox i {
+    position: absolute;
+    top: 50%;
+    left: 2.5rem;
+    transform: translateY(-50%);
+    color: var(--yellow);
+    font-size: 1.4rem;
+    pointer-events: none;
+}
 
 .searchContainer #search {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 5rem;
+    /* extra left padding for icon */
     border-radius: 1rem;
     border: none;
     outline: none;
-    font-size: 1rem;
+    font-size: 1.4rem;
     background: var(--black);
     color: var(--white);
 }
@@ -76,12 +87,19 @@ header {
 }
 
 
-.searchContainer #search:focus:not(:placeholder-shown) {
+/* .searchContainer #search:focus:not(:placeholder-shown) {
     font-size: 1.4rem;
     font-weight: 400;
     color: var(--white);
     padding: 1.2rem 1.5rem;
 
+} */
+
+.profileWrapper {
+    width: 90%;
+    max-width: 700px;
+    /* border: 2px solid red; */
+    margin: auto;
 }
 
 .profileContainer {
@@ -109,7 +127,7 @@ header {
     border: 2px solid var(--blue);
     border-radius: 50%;
     /* overflow: hidden; */
-    width: 10rem;
+    width: 7.5rem;
     /* height: 10rem; */
 
 }
@@ -267,5 +285,15 @@ footer p a {
 @media screen and (max-width:500px){
     footer{
         font-size: 1.1rem;
+    }
+
+    .profileContainer .profileHead .profileName .profileNameText {
+        font-weight: 600;
+        font-size: 1.8rem;
+        color: var(--yellow);
+    }
+
+    .reposTitle {
+        font-size: 1.8rem;
     }
 }
