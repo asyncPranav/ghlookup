@@ -1,3 +1,7 @@
+// error
+const errorBox = document.querySelector(".errorBox");
+const errorText = document.querySelector(".errorText");
+
 // profile
 const profileWrapper = document.querySelector(".profileWrapper");
 
@@ -16,6 +20,7 @@ const API = "https://api.github.com/users";
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    hideError(); // clear previous error
     profileWrapper.innerHTML = "";
     reposContainer.innerHTML = "";
     reposTitleContainer.innerHTML = "";
@@ -24,17 +29,41 @@ form.addEventListener("submit", (e) => {
     search.value = "";
 });
 
+
 // fetch data
 async function fetchData() {
     const username = search.value.trim();
+
+    // if empty username
+    if (username.length === 0) {
+        showError("❌ Cant't search empty username !!");
+        return;
+    }
+
+    // fetch data
     const response = await fetch(`${API}/${username}`);
     const data = await response.json();
 
+    console.log("Search limit left : " + response.headers.get("X-RateLimit-Remaining")); 
+
     // if failed fetching
-    if (!response.ok) {
-        alert("User not found or rate-limited by GitHub");
+    if (response.status === 404) {
+        showError(" User not found. Please check the username.");
         return;
     }
+
+    if (response.status === 403) {
+        const rateLimitRemaining = response.headers.get(
+            "X-RateLimit-Remaining"
+        );
+        if (rateLimitRemaining === "0") {
+            showError("GitHub API rate limit exceeded. Try again later.");
+        } else {
+            showError("Access forbidden. You may be blocked or unauthorized.");
+        }
+        return;
+    }
+    hideError();
 
     // else set profile header
     const avatarUrl = data.avatar_url;
@@ -85,7 +114,7 @@ async function fetchData() {
 
     // if failed to fetch repo
     if (!repoResponse.ok) {
-        alert("Failed to fetch repos.");
+        showError("Failed to fetch repos.");
         return;
     }
 
@@ -94,10 +123,8 @@ async function fetchData() {
         noRepo.className = "noRepoError";
         noRepo.textContent = "User haven't any repository !!";
         reposContainer.append(noRepo);
-        console.log(noRepo , reposContainer);
         return;
     }
-    console.log(repoData);
 
     // repo items
     repoData.forEach((obj) => {
@@ -125,4 +152,15 @@ async function fetchData() {
 
         reposContainer.append(newRepo);
     });
+}
+
+// error handle
+function showError(message) {
+    errorText.textContent = message;
+    errorBox.style.display = "block";
+}
+
+function hideError() {
+    errorText.textContent = "";
+    errorBox.style.display = "none";
 }

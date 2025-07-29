@@ -62,7 +62,7 @@ header {
     left: 2.5rem;
     transform: translateY(-50%);
     color: var(--yellow);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     pointer-events: none;
 }
 
@@ -86,14 +86,26 @@ header {
 
 }
 
+/* ------------------Error------------------- */
 
-/* .searchContainer #search:focus:not(:placeholder-shown) {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--white);
-    padding: 1.2rem 1.5rem;
+.errorBox {
+  display: none;
+  padding: 1.2rem 1.5rem;
+  margin: 6rem auto;
+  border-radius: 0.7rem;
+  font-size: 1.4rem;
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
 
-} */
+.errorBox i{
+    margin-right: 0.5rem;
+}
+
+/* ------------------Profile------------------- */
 
 .profileWrapper {
     width: 90%;
@@ -282,8 +294,8 @@ footer p a {
 
 }
 
-@media screen and (max-width:500px){
-    footer{
+@media screen and (max-width:500px) {
+    footer {
         font-size: 1.1rem;
     }
 
