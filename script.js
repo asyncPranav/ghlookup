@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
 
 // fetch data
 async function fetchData() {
-    const username = search.value;
+    const username = search.value.trim();
     const response = await fetch(`${API}/${username}`);
     const data = await response.json();
 
