@@ -52,14 +52,14 @@ async function fetchData() {
                 <img src=${avatarUrl} alt="user-image">
             </div>
             <div class="profileName">
-                <p class="profileNameText">${name}</p>
+                <p class="profileNameText">${name || "Not available"}</p>
                 <p class="profileUsernameText">@${login}</p>
             </div>
         </div>
 
         <!-- bio -->
         <div class="bioContainer">
-            <p class="bioText">Bio : ${bio || null}</p>
+            <p class="bioText">Bio : ${bio || "Not available"}</p>
         </div>
 
         <div class="followContainer">
