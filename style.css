@@ -22,6 +22,8 @@ body {
     background-color: var(--black);
     display: flex;
     flex-direction: column;
+    position: relative;
+    min-height: 100vh;
 }
 
 header {
@@ -92,7 +94,7 @@ header {
     border: 0.2rem solid var(--darkGrey);
     border-radius: 2rem;
     padding: 3rem;
-    
+
 }
 
 .profileContainer .profileHead {
@@ -186,6 +188,7 @@ header {
     max-width: 700px;
     margin: auto;
     /* border: 2px solid red; */
+    margin-bottom: 12rem;
 }
 
 .reposTitle {
@@ -233,8 +236,28 @@ header {
     color: #888;
 }
 
-.noRepoError{
+.noRepoError {
     font-size: 1.4rem;
     color: var(--grey);
     text-align: center;
+}
+
+
+/* ------------------Footer------------------- */
+
+
+footer {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #777;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+footer p a {
+    text-decoration: none;
+    color: var(--yellow);
+
 }
